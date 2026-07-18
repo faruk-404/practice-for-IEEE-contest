@@ -8,18 +8,12 @@ using namespace std;
 #define cn cout << "NO\n"
 #define all(v) v.begin(),v.end()
 #define rall(v) v.rbegin(),v.rend()
-const int mod=1e7+7;
 
-int bigmod(int a,int b){
-    if(b==0)return 1;
-    if(b&1){
-        return a%mod* bigmod(a,(b-1)%mod)%mod;
-    }
-    int tmp=bigmod(a,b/2)%mod;
-    return (tmp*tmp)%mod;
-}
 void solve(){
-    
+    int n;cin>>n;
+    vector<int> a(n);
+    for(auto &i:a)cin>>i;
+    cout<<n*(*max_element(all(a)))<<nl;
 }
 int32_t main() {
     ios::sync_with_stdio(false);
